@@ -78,6 +78,7 @@ sdi::ModelViewEdit* DynakeyReadModel(const char *filename)
     SolverInputInfo solverInf;
     ModelFactoryReaderPOExprTk* model = new ModelFactoryReaderPOExprTk();
     CommonDataReaderCFG reader(model,"", str_version, "", true);
+    reader.SetMessageList(&dynakeymessages, false);
     reader.ReadModel(filename, pre_obj_lst);
     sdi::ModelViewPO* pModelViewSDI = new sdi::SDIModelViewPOLSDyna(pre_obj_lst);
     pModelViewSDI->ApplyIdOffsets("INCLUDE_TRANSFORM");

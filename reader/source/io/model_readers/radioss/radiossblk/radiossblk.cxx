@@ -479,6 +479,7 @@ sdi::ModelViewEdit* RadiossblkReadModel(const char *filename)
     SolverInputInfo solverInf;
     ModelFactoryReaderPOExprTk* model = new ModelFactoryReaderPOExprTk();
     CommonDataReaderCFG reader(model, "radioss", rad_version, "", true);
+    reader.SetMessageList(&radiossblkmessages, false);
 
     reader.ReadModel(filename, pre_obj_lst);
 
